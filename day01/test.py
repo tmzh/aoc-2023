@@ -15,11 +15,10 @@ class Test(TestCase):
         for given, expected in test_cases:
             self.assertEquals(calibration_value(given), expected)
 
-
-class Test(TestCase):
     def test_calibration_values_sum(self):
         lines = ['1abc2',
                  'qr3stu8vwx',
                  'a1b2c3d4e5f',
                  'treb7uchet']
         self.assertEquals(calibration_values_sum(lines), 142)
+
