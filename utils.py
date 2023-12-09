@@ -1,6 +1,7 @@
 # The following code is adapted from https://github.com/norvig/pytudes
 import os
 import requests
+import re
 from typing import Callable, Union
 
 lines = str.splitlines
@@ -43,3 +44,14 @@ def download(day):
     else:
         print('Error occurred while downloading the file.')
         exit(1)
+
+
+def natural_range(start, end):
+    if not end:
+        return range(start + 1)
+    else:
+        return range(start + 1, end + 1)
+
+
+def matches_to_list(text, parser: Callable = int):
+    return set(parser(x.group(0)) for x in re.finditer(r'\d+', text))

@@ -1,9 +1,7 @@
-import itertools
+import math
+import re
 
 from utils import parse_challenge
-import re
-from collections import defaultdict
-import math
 
 symbols_pattern = r'[^0-9\.]'
 numbers_pattern = r'[0-9]+'
