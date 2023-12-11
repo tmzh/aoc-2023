@@ -11,8 +11,8 @@ paras = lambda t: t.split("\n\n")
 def preview_challenge(text):
     items = text.splitlines()
     print(f"Puzzle input: {len(items)}")
-    for i in range(5):
-        print(items[i])
+    for item in items[:5]:
+        print(item)
 
 
 def parse_challenge(text_or_day: Union[str, int], parser: Callable = str, sections: Callable = lines):
