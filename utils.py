@@ -53,5 +53,5 @@ def natural_range(start, end):
         return range(start + 1, end + 1)
 
 
-def matches_to_list(text, parser: Callable = int):
-    return set(parser(x.group(0)) for x in re.finditer(r'\d+', text))
+def matches_to_list(text, pattern, parser: Callable = int):
+    return [parser(x.group(0)) for x in re.finditer(pattern, text)]
